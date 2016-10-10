@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+
+      <p>
+        Поиск:
+        <input ng-model="$ctrl.query">
+      </p>
+
+      <p>
+        Отсортировать:
+        <select ng-model="$ctrl.orderProp">
+          <option value="name">По алфавиту</option>
+          <option value="price">От дешовых к дорогим</option>
+        </select>
+      </p>
+
+    </div>
+
+    <div class="col-md-10">
+      <ul class="goods">
+        <li ng-repeat="good in $ctrl.goods | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
+          <a href="#!/goods/{{good.id}}" class="thumb">
+            <img ng-src="{{good.imageUrl}}" alt="{{good.name}}" />
+          </a>
+          <a href="#!/goods/{{good.id}}">{{good.name}}</a>
+          <p>{{good.snippet}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--<pre>{{$ctrl.goods | filter:$ctrl.query | orderBy:$ctrl.orderProp | json}}</pre>-->
+</div>
+
+
+
+
+
+
+
