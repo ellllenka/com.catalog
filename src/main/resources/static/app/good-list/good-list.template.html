@@ -15,13 +15,15 @@
         </select>
       </p>
 
+      <!--<p><a href="#!/goods/{{good.id}}">Добавить новый товар</a></p>-->
+
     </div>
 
     <div class="col-md-10">
       <ul class="goods">
         <li ng-repeat="good in $ctrl.goods | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
           <a href="#!/goods/{{good.id}}" class="thumb">
-            <img ng-src="{{good.imageUrl}}" alt="{{good.name}}" />
+            <img ng-src="{{good.images[0]}}" alt="{{good.name}}" />
           </a>
           <a href="#!/goods/{{good.id}}">{{good.name}}</a>
           <p>{{good.snippet}}</p>

@@ -16,11 +16,14 @@ public class Good {
     private Integer id;
     private String name;
     private String snippet;
+    private Integer price;
+    private String mainImageUrl;
 
     @ElementCollection
     private List<String> description;
-    private Integer price;
-    private String imageUrl;
+
+    @ElementCollection
+    private List<String> images;
 
     public Integer getId() {
         return id;
@@ -30,12 +33,12 @@ public class Good {
         this.id = id;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getMainImageUrl() {
+        return mainImageUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setMainImageUrl(String mainImageUrl) {
+        this.mainImageUrl = mainImageUrl;
     }
 
     public Integer getPrice() {
@@ -70,14 +73,23 @@ public class Good {
         this.name = name;
     }
 
+    public List<String> getImages() {
+        return images;
+    }
+
+    public void setImages(List<String> images) {
+        this.images = images;
+    }
+
     public Good() {
     }
 
-    public Good(String name, String snippet, List<String> description, Integer price, String imageUrl) {
+    public Good(String name, String snippet, List<String> description, Integer price, String mainImageUrl, List<String> images) {
         this.name = name;
         this.snippet = snippet;
         this.description = description;
         this.price = price;
-        this.imageUrl = imageUrl;
+        this.mainImageUrl = mainImageUrl;
+        this.images = images;
     }
 }
